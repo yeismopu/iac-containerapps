@@ -10,10 +10,10 @@ param managedEnvironmentId string
 @description('Imagen del contenedor (ACR o público)')
 param image string
 
-@description('CPU asignado al contenedor')
-param cpu float = 0.25
+@description('CPU asignado al contenedor (ej: 0.25)')
+param cpu string = '0.25'
 
-@description('Memoria asignada al contenedor')
+@description('Memoria asignada al contenedor (ej: 0.5Gi)')
 param memory string = '0.5Gi'
 
 @description('Número mínimo de réplicas')
@@ -91,3 +91,11 @@ resource containerApp 'Microsoft.App/containerapps@2025-02-02-preview' = {
             http: {
               metadata: {
                 concurrentRequests: '100'
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
