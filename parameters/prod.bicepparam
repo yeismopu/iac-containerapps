@@ -1,3 +1,5 @@
+using '../main.bicep'
+
 param containerAppName = 'ca-integra-usuarios-prd'
 param location = 'eastus'
 
